@@ -1,127 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-cn">
   <head>
-    <meta charset="UTF-8" />
+    <link rel="dns-prefetch" href="//api-partner.depotnextdoor.com" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate" />
+    <meta http-equiv="expires" content="0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>why</title>
-    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-    <style>
-      .clocks {
-        height: 500px;
-        margin: 25px auto;
-        position: relative;
-        width: 500px;
-      }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>后台管理系统</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <!-- <script src="https://gw.alipayobjects.com/os/antv/pkg/_antv.data-set-0.9.6/dist/data-set.min.js"></script> -->
+    <!-- 引入百度地图 -->
+    <!-- <script type="text/javascript"
+          src="http://api.map.baidu.com/api?v=2.0&ak=PjH27Aq4gNZpxMeQIze3Gu5ELSlkWBtP&s=1"></script> -->
+    <!-- <script type="text/javascript" src="https://api.map.baidu.com/api?v=1.0&&type=webgl&ak=1XjLLEhZhQNUzd93EjU5nOGQ"></script> -->
+    <script
+      type="text/javascript"
+      src="http://api.map.baidu.com/api?v=2.0&amp;ak=ewyov1VyS6S6iNjVmngGtVtVnFZkDbH4"
+    ></script>
+    <script
+      type="text/javascript"
+      charset="utf-8"
+      src="/static/ueditor/ueditor.config.js"
+    ></script>
+    <!-- <script type="text/javascript" charset="utf-8" src="/static//static/ueditor.all.min.js"> </script> -->
+    <script
+      type="text/javascript"
+      charset="utf-8"
+      src="/static/ueditor/ueditor.all.js"
+    ></script>
+
+    <!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
+    <!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
+    <script
+      type="text/javascript"
+      charset="utf-8"
+      src="/static/ueditor/lang/zh-cn/zh-cn.js"
+    ></script>
+    <link rel="stylesheet" href="/static/umi.abcf450c.css" />
+    <script>
+      window.routerBase = "/docs/";
+    </script>
+    <script>
+      //! umi version: 3.5.23
+    </script>
   </head>
   <body>
-    <header>
-      <h2>HTML5 时钟</h2>
-    </header>
-    <div class="clocks">
-      <canvas id="canvas" width="500" height="500"></canvas>
-    </div>
-    <script>
-      // inner variables
-      var canvas, ctx;
-      var clockRadius = 250;
-      var clockImage;
+    <div id="root"></div>
 
-      // draw functions :
-      function clear() {
-        // clear canvas function
-        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-      }
-
-      function drawScene() {
-        // main drawScene function
-        clear(); // clear canvas
-
-        // get current time
-        var date = new Date();
-        var hours = date.getHours();
-        var minutes = date.getMinutes();
-        var seconds = date.getSeconds();
-        hours = hours > 12 ? hours - 12 : hours;
-        var hour = hours + minutes / 60;
-        var minute = minutes + seconds / 60;
-
-        // save current context
-        ctx.save();
-
-        // draw clock image (as background)
-        ctx.drawImage(clockImage, 0, 0, 500, 500);
-
-        ctx.translate(canvas.width / 2, canvas.height / 2);
-        ctx.beginPath();
-
-        // draw numbers
-        ctx.font = '36px Arial';
-        ctx.fillStyle = '#000';
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'middle';
-        for (var n = 1; n <= 12; n++) {
-          var theta = ((n - 3) * (Math.PI * 2)) / 12;
-          var x = clockRadius * 0.7 * Math.cos(theta);
-          var y = clockRadius * 0.7 * Math.sin(theta);
-          ctx.fillText(n, x, y);
-        }
-
-        // draw hour
-        ctx.save();
-        var theta = ((hour - 3) * 2 * Math.PI) / 12;
-        ctx.rotate(theta);
-        ctx.beginPath();
-        ctx.moveTo(-15, -5);
-        ctx.lineTo(-15, 5);
-        ctx.lineTo(clockRadius * 0.5, 1);
-        ctx.lineTo(clockRadius * 0.5, -1);
-        ctx.fill();
-        ctx.restore();
-
-        // draw minute
-        ctx.save();
-        var theta = ((minute - 15) * 2 * Math.PI) / 60;
-        ctx.rotate(theta);
-        ctx.beginPath();
-        ctx.moveTo(-15, -4);
-        ctx.lineTo(-15, 4);
-        ctx.lineTo(clockRadius * 0.8, 1);
-        ctx.lineTo(clockRadius * 0.8, -1);
-        ctx.fill();
-        ctx.restore();
-
-        // draw second
-        ctx.save();
-        var theta = ((seconds - 15) * 2 * Math.PI) / 60;
-        ctx.rotate(theta);
-        ctx.beginPath();
-        ctx.moveTo(-15, -3);
-        ctx.lineTo(-15, 3);
-        ctx.lineTo(clockRadius * 0.9, 1);
-        ctx.lineTo(clockRadius * 0.9, -1);
-        ctx.fillStyle = '#0f0';
-        ctx.fill();
-        ctx.restore();
-
-        ctx.restore();
-      }
-
-      // initialization
-      $(function () {
-        canvas = document.getElementById('canvas');
-        ctx = canvas.getContext('2d');
-
-        // var width = canvas.width;
-        // var height = canvas.height;
-
-        clockImage = new Image();
-        clockImage.src =
-          'https://static.runoob.com/images/mix/125855_nnla_89964.png';
-
-        setInterval(drawScene, 1000); // loop drawScene
-      });
-    </script>
+    <script src="/static/umi.3f2d7f2d.js"></script>
   </body>
+  <!-- <script>
+  window.BMap = BMap;
+</script> -->
 </html>
