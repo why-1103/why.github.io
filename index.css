@@ -1,0 +1,48 @@
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ul li {
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+}
+ul li span {
+  color: #fff;
+  mix-blend-mode: difference;
+}
+
+.line-1 {
+  background-color: #fcffe6;
+}
+.line-2 {
+  background-color: #f4ffb8;
+}
+.line-3 {
+  background-color: #eaff8f;
+}
+.line-4 {
+  background-color: #d3f261;
+}
+
+.line-5 {
+  background-color: #bae637;
+}
+.line-6 {
+  background-color: #a0d911;
+}
+.line-7 {
+  background-color: #7cb305;
+}
+.line-8 {
+  background-color: #5b8c00;
+}
+.line-9 {
+  background-color: #3f6600;
+}
+.line-10 {
+  background-color: #254000;
+}
