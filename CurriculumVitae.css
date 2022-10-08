@@ -1,0 +1,194 @@
+/* 初始化样式 */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+blockquote,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+form,
+fieldset,
+legend,
+button,
+input,
+textarea,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+body,
+button,
+input,
+select,
+textarea {
+  font: 12px/1.5tahoma, arial, \5b8b\4f53;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+}
+address,
+cite,
+dfn,
+em,
+var {
+  font-style: normal;
+}
+code,
+kbd,
+pre,
+samp {
+  font-family: couriernew, courier, monospace;
+}
+small {
+  font-size: 12px;
+}
+ul,
+ol {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+sup {
+  vertical-align: text-top;
+}
+sub {
+  vertical-align: text-bottom;
+}
+legend {
+  color: #000;
+}
+fieldset,
+img {
+  border: 0;
+}
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 初始化样式 */
+
+body {
+  background: rgb(57, 57, 77);
+}
+.resume_box {
+  width: 60%;
+  margin: auto;
+  background: #fff;
+}
+
+.basic_info_box {
+  padding: 50px 50px 30px 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.basic_info_list {
+  width: 70%;
+}
+.photo_box {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.photo_box img {
+  min-width: 200px;
+  object-fit: contain;
+}
+
+.info-title {
+  font-size: 2em;
+  color: #284967;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.info-subtitle {
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.basic_info_list dt {
+  width: 100%;
+}
+
+.basic_info_list dd {
+  min-width: 50%;
+  float: left;
+  margin: 6px 0;
+  padding: 0;
+}
+
+.resume_content_all {
+  margin: 0 30px 0;
+}
+
+.resume_content {
+  margin-top: 15px;
+}
+
+.module_tit {
+  padding: 8px 10px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #284967;
+  background-color: rgba(40, 73, 103, 0.12);
+}
+
+.content_list {
+  margin-top: 13px;
+}
+
+.list_top {
+  font-size: 13px;
+  font-weight: bold;
+  color: #333;
+}
+
+.list_top .name,
+.list_top .time {
+  display: inline-block;
+}
+
+.list_top .time {
+  min-width: 30%;
+}
+
+.list_top :last-child {
+  float: right;
+}
+
+.ql-editor {
+  font-size: 13px;
+  margin-top: 6px;
+  line-height: 1.7;
+}

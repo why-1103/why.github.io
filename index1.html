@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>why</title>
+    <link href="index1.css" rel="stylesheet" />
+    <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+    <style>
+      .black {
+        position: relative;
+        height: 100vh;
+        background: linear-gradient(45deg, #000 0, #000 50%, #fff 50%);
+      }
+      .black::before {
+        content: 'LOREM IPSUM';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        mix-blend-mode: difference;
+        animation: move 3s infinite linear alternate;
+      }
+      @keyframes move {
+        0% {
+          transform: translate(-30%, -50%);
+        }
+        100% {
+          transform: translate(-70%, -50%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="black"></div>
+    <ul>
+      <li class="line-1"><span>background-color: #fcffe6</span></li>
+      <li class="line-2"><span>background-color: #f4ffb8</span></li>
+      <li class="line-3"><span>background-color: #eaff8f</span></li>
+      <li class="line-4"><span>background-color: #d3f261</span></li>
+      <li class="line-5"><span>background-color: #bae637</span></li>
+      <li class="line-6"><span>background-color: #a0d911</span></li>
+      <li class="line-7"><span>background-color: #7cb305</span></li>
+      <li class="line-8"><span>background-color: #5b8c00</span></li>
+      <li class="line-9"><span>background-color: #3f6600</span></li>
+      <li class="line-10"><span>background-color: #254000</span></li>
+    </ul>
+  </body>
+</html>

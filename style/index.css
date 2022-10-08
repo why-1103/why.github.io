@@ -1,0 +1,27 @@
+body {
+  height: 100vh;
+  background: rgb(25, 26, 56);
+  background-image: linear-gradient(
+    /* 135deg, */ to bottom right,
+    rgb(30, 30, 66) 50%,
+    rgba(255, 255, 255, 0) 50%
+  );
+}
+
+.behind {
+  width: 70%;
+  height: 50vh;
+  min-height: 500px;
+  position: absolute;
+  left: 55%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(
+    rgb(0, 0, 0, 0) 0%,
+    rgb(0, 0, 0, 0) 80%,
+    rgb(58, 39, 83) 100%
+  );
+  color: #fff;
+  border-bottom: 4px solid rgb(210, 49, 149);
+  box-shadow: 0 8px 20px 20px rgba(0, 0, 0, 0.2);
+}
